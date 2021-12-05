@@ -1,7 +1,7 @@
 /**
  * Created by Bozhena on 03.12.2021
  */
-public class Strings { //Ссылочный тип данных
+public class Strings_3 { //Ссылочный тип данных
     // Декларация и инициализация таких переменные такая же,
     // НО с совершенно другим смыслом
     public static void main(String [] args) {

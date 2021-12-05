@@ -1,7 +1,7 @@
 /**
  * Created by Bozhena on 03.12.2021
  */
-public class Variables {
+public class Variables_2 {
     // Перечисленные типы данных являются примитивными типами данных в Java
     // Всего в Java: примитивные типы данных и ссылочные типы данных
     public static void main(String[] args) {
