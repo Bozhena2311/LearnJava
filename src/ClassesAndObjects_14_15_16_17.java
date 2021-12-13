@@ -3,7 +3,7 @@
  */
 // Публичный класс это главный класс в файле, Публичный класс может быть только один
 // Имя публичного класса должно соответствовать имени файла
-public class ClassesAndObjects_14_15 {
+public class ClassesAndObjects_14_15_16_17 {
     // Класс это шаблон, это общие понятия.
     // Например, класс "Человек прямоходящий"
     // Конкретный человек, я, Начальник - это конкретный объект класса "Человек прямоходящий"
@@ -12,19 +12,35 @@ public class ClassesAndObjects_14_15 {
     public static void main(String [] args) {
         // Из нашего абстрактного класса Person создадим несколько конкретных людей
         Person person1 = new Person(); // Переменная person1 типа данных - Person
-        person1.name = "Roma";
-        person1.age = 50; //переменная пишет без скобок
+//        person1.name = "Roma";
+//        person1.age = 50; //переменная пишет без скобок
         // Вызовем метод speak
         person1.speak(); //метод пишется со скобками, в которых пишутся параметры, если они нужны
         person1.speak(); //методы можно вызывать сколько угодно раз
         person1.sayHello();
+        person1.setName("Роман", 40);
+
         Person person2 = new Person();
-        person2.name = "Ivan";
-        person2.age = 20;
+//        person2.name = "Ivan";
+//        person2.age = 20;
+        String s = "Bob";
         person2.speak();
         person2.sayHello();
+        person2.setName(s, 50);
 
+        System.out.println();
         //person1 and person2 - объекты класса Person
+
+
+        int year1 = person1.calculateYearsToRetirement(); // вызов метода и подхват возвращаемого значения
+        System.out.println();
+        int year2 = person2.calculateYearsToRetirement(); // вызов метода и подхват возвращаемого значения
+        System.out.println("Первому человеку до пенсии " + year1 + " лет");
+        System.out.println("Второму человеку до пенсии " + year2 + " лет");
+
+        person1.speak();
+        person2.speak();
+
     }
 }
 
@@ -40,7 +56,7 @@ class Person{
     // Действие по выводу имени и фамилии можно перенести в класс и это будет метод класса Person
 
     //Создадим метод, круглые скобки являются аргументами или параметрами метода
-    void speak() {
+    void speak() { // void метод возвращающий ничто
         // Поля и методы в одном классе знают о существование друг друга,
         // Поэтому name и age - это именно, те данные(поля), которые мы декларирование ранее
         for (int i = 0; i < 3; i++) {
@@ -51,4 +67,20 @@ class Person{
     void sayHello() { // Для этого метода не нужны данные объекта
         System.out.println("Hello");
     }
+
+    int calculateYearsToRetirement() {
+        int years = 65-age;
+        return years; // Этот метод возвращает int в то место где он вызван
+        //return не только возвращает, но и мгновенно выходит из метода
+        //Если мы указали у метода определенное значение, то мы не можем возвращать другое значение
+    }
+    // У наших 3 методов пустые параметры в круглых скобках,
+    // но часто методам нужна какая-то дополнительная информация в виде параметров
+
+    // метод setName ничего не будет возвращать так как его тип данных void
+    // теперь метод setName принимает в качестве параметра строку username
+    void setName(String username, int age) {
+        name = username;
+    }
+
 }
